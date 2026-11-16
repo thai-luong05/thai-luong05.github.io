@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Duong T. Do · Quantum ML & Optimization</title>
+  <meta name="description" content="Duong T. Do (Alex): PhD researcher in Electrical Engineering at Arizona State University working on quantum machine learning, quantum algorithms, and mathematical optimization.">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (!t) t = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar" id="topbar">
+    <div class="wrap topbar-inner">
+      <a class="logo" href="#journey" aria-label="Home">
+        <span class="logo-dot" aria-hidden="true"></span>
+        <span class="logo-name" data-bind="name"></span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Primary">
+        <a href="#journey" data-section="journey">Home</a>
+        <a href="#research" data-section="research">Research</a>
+        <a href="#playground" data-section="playground">Playground</a>
+        <a href="#publications" data-section="publications">Publications</a>
+        <a href="#recognition" data-section="recognition">Talks & Honors</a>
+        <a href="#contact" data-section="contact">Contact</a>
+      </nav>
+      <div class="topbar-actions">
+        <button class="icon-btn" id="termBtn" aria-label="Open terminal" title="Terminal ( ` )">&gt;_</button>
+        <button class="icon-btn" id="themeBtn" aria-label="Toggle day and night" title="Day / night">
+          <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></g></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ JOURNEY: illustrated side-scroller ============ -->
+    <section id="journey" class="journey" aria-label="Profile and journey">
+      <div class="j-sticky" id="jSticky">
+        <div class="j-track" id="jTrack"></div>
+        <div class="mascot" id="mascot" aria-hidden="true">
+          <div class="bubble" id="bubble"><span class="mouse"></span>Scroll to evolve |ψ⟩</div>
+        </div>
+        <nav class="j-nav" id="jNav" aria-label="Journey timeline">
+          <div class="j-prog"><i id="jProg"></i></div>
+          <div class="j-items" id="jItems"></div>
+        </nav>
+        <a class="btn sm skip" href="#research">Skip the ride <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+
+    <!-- ============ RESEARCH ============ -->
+    <section id="research" class="section" aria-labelledby="research-h">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="label">Research</span>
+            <h2 id="research-h">Algorithms with guarantees</h2>
+          </div>
+          <p class="section-sub">Theory first, then experiments: convergence bounds, perturbation guarantees and finite-shot analysis for quantum learning and optimization.</p>
+        </div>
+        <div class="stats" id="stats"></div>
+        <div class="cards" id="researchCards"></div>
+      </div>
+      <div class="marquee" aria-label="Toolbox">
+        <div class="marquee-row" id="tools1"></div>
+        <div class="marquee-row rev" id="tools2"></div>
+      </div>
+    </section>
+
+    <!-- ============ PLAYGROUND ============ -->
+    <section id="playground" class="section tint" aria-labelledby="pg-h">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="label">Interactive tools</span>
+            <h2 id="pg-h">Quantum lab bench</h2>
+          </div>
+          <p class="section-sub">Three small toys, each built on one of my research threads. Drag, click and break things.</p>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Playground tools">
+          <button role="tab" id="tab-qubit" aria-controls="panel-qubit" aria-selected="true">Qubit lab</button>
+          <button role="tab" id="tab-opt" aria-controls="panel-opt" aria-selected="false" tabindex="-1">Optimizer race</button>
+          <button role="tab" id="tab-kernel" aria-controls="panel-kernel" aria-selected="false" tabindex="-1">Low-rank kernel</button>
+        </div>
+
+        <!-- Qubit lab -->
+        <div class="panel" role="tabpanel" id="panel-qubit" aria-labelledby="tab-qubit">
+          <div class="bench">
+            <div class="bench-plot center">
+              <div class="plot-wrap square"><canvas id="qBloch" aria-label="Interactive Bloch sphere. Drag to rotate."></canvas>
+                <div class="hover-read">drag to rotate</div></div>
+            </div>
+            <aside class="bench-side">
+              <h3>Single-qubit gates & finite shots</h3>
+              <p class="muted small">Apply gates to rotate the state, then measure with a finite shot budget S. The estimation error shrinks like 1/√S, which is the central issue in finite-shot QML.</p>
+              <div class="ctrl">
+                <span class="ctrl-label">Gates</span>
+                <div class="gates" id="gates">
+                  <button data-g="X">X</button><button data-g="Y">Y</button><button data-g="Z">Z</button><button data-g="H">H</button>
+                  <button data-g="S">S</button><button data-g="T">T</button><button data-g="RX">R<sub>x</sub></button><button data-g="RY">R<sub>y</sub></button>
+                </div>
+              </div>
+              <label class="ctrl"><span class="ctrl-label">Rotation angle θ <b id="thV">π/4</b></span>
+                <input type="range" id="th" min="0" max="6.2832" step="0.0436" value="0.7854"></label>
+              <div class="trail" id="trail" aria-label="Applied gates"></div>
+              <div class="ctrl">
+                <span class="ctrl-label">Measure in basis</span>
+                <div class="seg" id="basis">
+                  <button aria-pressed="true" data-v="z">Z</button><button aria-pressed="false" data-v="x">X</button><button aria-pressed="false" data-v="y">Y</button>
+                </div>
+              </div>
+              <label class="ctrl"><span class="ctrl-label">Shots S <b id="shotsV">256</b></span>
+                <input type="range" id="shots" min="0" max="4" step="0.05" value="2.408"></label>
+              <div class="row-btns"><button class="btn sm primary" id="measure" type="button">Measure</button><button class="btn sm" id="qReset" type="button">Reset |0⟩</button></div>
+              <div class="hist" id="hist"></div>
+              <dl class="readouts" id="qRead"></dl>
+            </aside>
+          </div>
+        </div>
+
+        <!-- Optimizer race -->
+        <div class="panel" role="tabpanel" id="panel-opt" aria-labelledby="tab-opt" hidden>
+          <div class="bench">
+            <div class="bench-plot">
+              <div class="plot-wrap tall"><canvas id="land" aria-label="Cost landscape with optimizer trajectories. Click to set the start point."></canvas>
+                <div class="hover-read light">click to set start</div></div>
+              <div class="plot-wrap short"><canvas id="lossPlot" aria-label="Loss curves"></canvas></div>
+            </div>
+            <aside class="bench-side">
+              <h3>VQE landscape: GD vs Adam vs QNG</h3>
+              <p class="muted small">Ansatz |ψ(θ)⟩ = R<sub>z</sub>(θ₂)R<sub>y</sub>(θ₁)|0⟩ with H = 0.6 Z + 0.8 X. Gradients come from the parameter-shift rule with shot noise, and QNG preconditions with the Fubini–Study metric.</p>
+              <div class="legend" id="optLegend"></div>
+              <label class="ctrl"><span class="ctrl-label">Learning rate η <b id="lrV">0.10</b></span>
+                <input type="range" id="lr" min="0.02" max="0.4" step="0.01" value="0.1"></label>
+              <label class="ctrl"><span class="ctrl-label">Shots per gradient <b id="oShotsV">1,000</b></span>
+                <input type="range" id="oShots" min="1" max="5" step="0.1" value="3"></label>
+              <div class="row-btns"><button class="btn sm primary" id="optRun" type="button">▶ Race</button><button class="btn sm" id="optRand" type="button">Random start</button></div>
+              <dl class="readouts" id="oRead"></dl>
+            </aside>
+          </div>
+        </div>
+
+        <!-- Low-rank kernel -->
+        <div class="panel" role="tabpanel" id="panel-kernel" aria-labelledby="tab-kernel" hidden>
+          <div class="bench">
+            <div class="bench-plot">
+              <div class="kgrid">
+                <figure><canvas id="kExact" aria-label="Exact quantum kernel matrix"></canvas><figcaption>Exact K (n² circuits)</figcaption></figure>
+                <figure><canvas id="kApprox" aria-label="Low-rank approximation"></canvas><figcaption>Rank-r approx. L Lᵀ</figcaption></figure>
+                <figure><canvas id="kErr" aria-label="Approximation error"></canvas><figcaption>|K − L Lᵀ| × 4</figcaption></figure>
+              </div>
+              <div class="plot-wrap short"><canvas id="kCurve" aria-label="Error versus rank"></canvas></div>
+            </div>
+            <aside class="bench-side">
+              <h3>Quantum kernel via incomplete Cholesky</h3>
+              <p class="muted small">Fidelity kernel k(x,x′) = |⟨φ(x)|φ(x′)⟩|² with angle encoding on 4 qubits. Greedy pivoting picks the most informative columns (white markers), so only n·r circuits run instead of n².</p>
+              <label class="ctrl"><span class="ctrl-label">Rank r <b id="rV">8</b></span>
+                <input type="range" id="rank" min="1" max="40" step="1" value="8"></label>
+              <label class="ctrl"><span class="ctrl-label">Encoding bandwidth γ <b id="gV">1.00</b></span>
+                <input type="range" id="gamma" min="0.2" max="3" step="0.05" value="1"></label>
+              <label class="ctrl"><span class="ctrl-label">Shots per entry <b id="kShotsV">∞</b></span>
+                <input type="range" id="kShots" min="1" max="5" step="0.1" value="5"></label>
+              <dl class="readouts" id="kRead"></dl>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PUBLICATIONS ============ -->
+    <section id="publications" class="section" aria-labelledby="pubs-h">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="label">Research</span>
+            <h2 id="pubs-h">Papers &amp; preprints</h2>
+          </div>
+          <div class="pub-tools">
+            <div class="chips" id="pubFilters" role="group" aria-label="Filter by type"></div>
+            <input type="search" id="pubSearch" placeholder="Search: kernel, games, radar…" aria-label="Search publications">
+          </div>
+        </div>
+        <div class="nb-card pubs-card">
+          <div class="pub-bar">
+            <span id="pubCount" class="mono small"></span>
+            <button class="btn xs" id="toggleAbs" type="button" aria-pressed="true">Collapse all abstracts</button>
+          </div>
+          <ol class="pubs" id="pubList"></ol>
+          <p class="empty" id="pubEmpty" hidden>No papers match that filter.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RECOGNITION ============ -->
+    <section id="recognition" class="section tint" aria-labelledby="rec-h">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="label">Talks, honors &amp; service</span>
+            <h2 id="rec-h">Signals from the community</h2>
+          </div>
+        </div>
+        <div class="rec-grid">
+          <div class="nb-card rec-talks"><h3>Research talks</h3><ol class="talks" id="talks"></ol></div>
+          <div class="nb-card"><h3>Honors &amp; awards</h3><ol class="timeline" id="honors"></ol></div>
+          <div class="nb-card rec-review"><h3>Reviewer</h3><p class="muted small">Journals</p><div class="chips static" id="revJ"></div><p class="muted small">Conferences</p><div class="chips static" id="revC"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section contact" aria-labelledby="contact-h">
+      <div class="wrap">
+        <div class="nb-card contact-card">
+          <canvas id="contactViz" aria-hidden="true"></canvas>
+          <div class="contact-inner">
+            <span class="label">Contact</span>
+            <h2 id="contact-h" class="contact-h">Let's entangle ideas.</h2>
+            <p class="hire"><span class="live-dot"></span><span data-bind="hireNote"></span></p>
+            <div class="contact-actions">
+              <a class="btn primary" id="mailBtn" href="#">Email</a>
+              <button class="btn" id="copyMail" type="button">Copy address</button>
+            </div>
+            <ul class="link-row" id="footLinks"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner mono">
+      <span>© <span id="year"></span> <span data-bind="name"></span> · <span data-bind="hireNote"></span></span>
+      <span>⟨ψ|ψ⟩ = 1 ✓</span>
+    </div>
+  </footer>
+
+  <!-- ============ TERMINAL ============ -->
+  <div class="term" id="term" role="dialog" aria-modal="true" aria-label="Terminal" hidden>
+    <div class="term-box">
+      <div class="term-bar">
+        <span class="dots"><i></i><i></i><i></i></span>
+        <span class="mono">guest@qpu-0: ~</span>
+        <button class="icon-btn sm" id="termClose" aria-label="Close terminal">✕</button>
+      </div>
+      <div class="term-out" id="termOut"></div>
+      <form class="term-in" id="termForm" autocomplete="off">
+        <label for="termInput" class="prompt">$</label>
+        <input id="termInput" spellcheck="false" autocapitalize="off" aria-label="Command">
+      </form>
+    </div>
+  </div>
+
+  <noscript><p class="noscript">This portfolio is interactive and needs JavaScript.</p></noscript>
+  <script src="content.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

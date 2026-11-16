@@ -1,0 +1,251 @@
+/* =====================================================================
+   SITE CONTENT — edit this file to update the portfolio.
+   No build step: save and refresh the browser.
+   ===================================================================== */
+window.SITE = {
+  name: "Duong T. Do",
+  nickname: "Alex",
+  initials: "DD",
+  /* Name spellings to bold in author lists */
+  aliases: ["Duong The Do", "The-Duong Do", "Duong T. Do"],
+  role: "PhD Researcher · Electrical Engineering · Arizona State University",
+  tagline:
+    "I build hybrid quantum–classical learning algorithms, and the optimization theory that keeps them working with finite shots, noisy hardware, and real-world uncertainty.",
+  focus: ["Quantum machine learning", "Quantum algorithms", "Mathematical optimization"],
+  email: "duongdo@asu.edu",
+  location: "Tempe, Arizona",
+  hireNote: "Seeking research roles in QML, quantum computing & optimization",
+
+  links: [
+    { label: "CV", href: "DuongDo_CV.pdf" },
+    { label: "LinkedIn", href: "https://linkedin.com/in/duong-do-asu" },
+    { label: "GitHub", href: "https://github.com/The-Duong" },
+  ],
+
+  /* The journey: one illustrated scene per chapter.
+     scene ∈ profile | hanoi | korea | arizona | lab | federated | next
+     side  ∈ left | right   (where the card sits)
+     qubit = the mascot's state in that scene                            */
+  journey: [
+    { scene: "profile", step: "Profile", side: "left", accent: "q6",
+      qubit: { arrow: 0, ket: "0", mode: "idle" } },
+    { scene: "hanoi", step: "2018", side: "left", accent: "q6", gate: "H",
+      place: "Hanoi, Vietnam", years: "→ 2018",
+      title: "Superposition of disciplines",
+      body: "I earned my B.Eng. in Mechatronics Engineering in the Honors Program at Hanoi University of Science and Technology. Mechanics, electronics and code at once: my first superposition.",
+      tags: ["B.Eng., Honors Program", "Mechatronics"],
+      qubit: { arrow: 90, ket: "+", mode: "idle" } },
+    { scene: "korea", step: "2019", side: "right", accent: "q2", gate: "R(θ)",
+      place: "Yongin, South Korea", years: "2019 – 2021",
+      title: "Teaching networks to read signals",
+      body: "At Myongji University's ICT Lab I earned an M.Sc. in Electronics Engineering, building CNNs that recognize road environments from 77 GHz FMCW radar and deep models that diagnose partial discharges in power equipment.",
+      tags: ["M.Sc. Electronics Eng.", "4 journal papers · 2020", "Research Honor Award"],
+      qubit: { arrow: 45, ket: "ψ", mode: "idle" } },
+    { scene: "arizona", step: "2021", side: "left", accent: "q5", gate: "CNOT",
+      place: "Tempe, Arizona", years: "2021 – 2026",
+      title: "Entangling quantum & optimization",
+      body: "Doctoral studies at Arizona State University's School of ECEE. Early work turned edge-computing and resource-allocation problems into QUBOs, pairing quantum annealers with Benders decomposition, ADMM and robust optimization.",
+      tags: ["PhD, Electrical Eng.", "GPA 4.0 / 4.0", "ASU Outstanding Research Award"],
+      qubit: { arrow: 135, ket: "Φ", mode: "entangled" } },
+    { scene: "lab", step: "2023", side: "right", accent: "q3", gate: "U(θ)",
+      place: "QWorld · IAAIR", years: "2023 – 2025",
+      title: "Hands-on variational circuits",
+      body: "Research internships: a hybrid quantum–classical U-Net for PCB defect segmentation at QWorld QIntern (Best Presentation, 2nd team), then scalable Nyström-based quantum SVMs at IAAIR.",
+      tags: ["QIntern 2023", "IAAIR 2025", "Womanium Scholar"],
+      qubit: { arrow: 60, ket: "+", mode: "super" } },
+    { scene: "federated", step: "2025", side: "left", accent: "q1", gate: "∇",
+      place: "Arizona State University", years: "2025 – 2026",
+      title: "Theory under finite shots",
+      body: "Proving how measurement noise travels through quantum federated learning, low-rank quantum kernels, game solvers and new geometry-aware optimizers such as Quantum Natural Muon.",
+      tags: ["O(d_q/S) bounds", "IEEE L-CSS 2026", "8 preprints in 2026"],
+      qubit: { arrow: 0, ket: "∇", mode: "spin" } },
+    { scene: "next", step: "Next", side: "right", accent: "q4", gate: "M",
+      place: "Open to opportunities", years: "2026 →",
+      title: "Ready for measurement",
+      body: "I'm looking for research positions in quantum machine learning, quantum computing and mathematical optimization: industry labs, quantum startups, or postdoctoral roles.",
+      tags: ["QML", "Quantum computing", "Optimization"],
+      contact: true,
+      qubit: { arrow: 0, ket: "1", mode: "happy" } },
+  ],
+
+  research: [
+    {
+      title: "Quantum federated learning",
+      body: "Finite-shot QFL with heterogeneous clients and partial participation: O(d_q/S) gradient-MSE bounds, nonconvex convergence guarantees, decentralized and ADMM-based training, and quantum trust ranking against Byzantine clients.",
+      tags: ["QFL", "Nonconvex theory", "ADMM"],
+      viz: "fed",
+    },
+    {
+      title: "Quantum kernels & QML",
+      body: "Low-rank quantum kernel acquisition with incomplete Cholesky and Nyström, with perturbation guarantees for QSVMs. Hybrid quantum–classical networks for vision and representation learning.",
+      tags: ["QSVM", "Nyström", "Hybrid U-Net"],
+      viz: "kernel",
+    },
+    {
+      title: "Quantum optimization & games",
+      body: "Quantum extragradient for zero-sum games, quantum-mediated Stackelberg security games, QUBO-based robust optimization (QC-CCG), and geometry-aware VQC optimizers.",
+      tags: ["Game theory", "QUBO", "QNG"],
+      viz: "game",
+    },
+  ],
+
+  stats: [
+    { value: 15, label: "Publications & preprints" },
+    { value: 14, label: "Venues reviewed for" },
+    { value: 96.5, decimals: 1, suffix: "%", label: "Decentralized QFL accuracy" },
+    { value: 63, suffix: "%", label: "Fewer shots in decentralized QFL" },
+  ],
+
+  toolbox: [
+    "Python", "PyTorch", "PennyLane", "Qiskit", "Julia", "C/C++", "MATLAB", "TensorFlow",
+    "NumPy", "SciPy", "scikit-learn", "Gurobi", "MOSEK", "CVX", "LaTeX", "Linux",
+    "VQE", "QAOA", "Quantum kernels", "Quantum Fisher information", "QUBO / Ising",
+    "ADMM", "Benders", "C&CG", "Wasserstein DRO", "Nash equilibria", "Federated learning", "U-Net",
+  ],
+
+  /* type ∈ journal | conference | preprint. Abstracts are the authors' own. */
+  publications: [
+    {
+      type: "preprint", badge: "arXiv", venue: "arXiv:2611.10105", year: 2026,
+      title: "Quantum Natural Muon: Spectral-Natural Optimization for Variational Quantum Circuits",
+      authors: ["Duong The Do", "Duong Tung Nguyen"],
+      highlights: ["Spectral natural gradient", "Nonconvex stationarity guarantees", "VQE · QAOA · classification"],
+      abstract: "Training parameterized quantum circuits requires optimization methods that account for two distinct structures: the information geometry of quantum states and the matrix or tensor structure induced by circuit parameterization. We introduce Quantum Natural Muon (QNM), a spectral natural-gradient framework that applies polar normalization to circuit-semantic parameter blocks after damped quantum Fisher preconditioning. This ordering is essential: quantum Fisher preconditioning and blockwise polar normalization do not commute in general, so QNM is not an order-free composition of quantum natural gradient (QNG) and Muon. We show that Frobenius-matched polar mixing preserves active singular subspaces while raising a spectral floor and improving active conditioning, and that the resulting direction remains a controlled perturbation of QNG. For its distance-aware realization (DA-QNM), we further establish alignment, descent, and nonconvex stationarity guarantees for the normalized update, together with perturbation bounds under gradient and QFIM estimation error. Experiments on variational quantum eigensolving, weighted QAOA-MaxCut, and supervised quantum classification isolate the roles of quantum geometry, circuit-semantic spectral structure, and radius control. The strongest gains arise when the spectral blocks match the circuit structure, supporting the central principle that quantum-state and structured spectral geometries provide complementary information for variational quantum optimization.",
+      links: [{ label: "arXiv", href: "https://arxiv.org/abs/2611.10105" }, { label: "PDF", href: "https://arxiv.org/pdf/2611.10105" }],
+    },
+    {
+      type: "preprint", badge: "arXiv", venue: "arXiv:2611.03777", year: 2026,
+      title: "Adaptive Low-Rank Quantum Kernel Acquisition under Finite-Shot Measurements: Perturbation Guarantees for QSVMs",
+      authors: ["Duong The Do", "Duong Tung Nguyen"],
+      highlights: ["O(n·r·Nₛ) circuit cost", "Non-asymptotic perturbation bounds", "Rank–shot conditions"],
+      abstract: "Quantum kernel methods require estimating entries of a dense Gram matrix through repeated circuit measurements, making kernel construction expensive and statistically noisy. For a dataset of size n, dense construction requires O(n²) kernel queries, while existing approximation methods typically assume inexpensive access to kernel entries or use non-adaptive sampling. We study adaptive low-rank quantum kernel acquisition when the kernel is accessible only through a finite-shot quantum overlap oracle. Our framework, ICAQKL, uses residual-driven incomplete Cholesky construction to acquire informative kernel columns sequentially and form a positive-semidefinite rank-r surrogate, reducing the training-kernel acquisition cost to O(n·r·Nₛ) circuit executions for r ≪ n, where Nₛ is the number of shots per queried entry. The central difficulty is that finite-shot errors perturb both the queried kernel values and the adaptive pivot sequence that determines the low-rank factor. We develop a non-asymptotic perturbation framework for this stochastic adaptive process, establishing concentration over the realized queries, stability of noisy pivot selection and factor construction, and propagation of the coupled sampling and approximation errors to the QSVM objective, optimizer, prediction function, and classification margin. The resulting rank–shot conditions characterize when ICAQKL approaches the full QSVM induced by the same quantum feature map. Experiments on benchmark and biomedical datasets show favorable accuracy–query-cost tradeoffs, competitive performance with the full QSVM, and competitive or improved performance relative to the evaluated Nyström baselines under comparable settings. ICAQKL is intended to enable measurement-efficient and theoretically controlled use of a selected quantum kernel, rather than to establish quantum advantage over classical kernels.",
+      links: [{ label: "arXiv", href: "https://arxiv.org/abs/2611.03777" }, { label: "PDF", href: "https://arxiv.org/pdf/2611.03777" }],
+    },
+    {
+      type: "preprint", badge: "Zenodo", venue: "Zenodo", year: 2026,
+      title: "Finite-Shot Quantum Federated Learning: Trajectory-Dependent Update Discrepancies and Nonconvex Convergence under Proximal Dynamics",
+      authors: ["Duong The Do", "Duong Tung Nguyen"],
+      highlights: ["Gradient MSE O(d_q/S)", "No Polyak–Łojasiewicz assumption", "Partial-participation correction"],
+      abstract: "We study quantum federated learning with variational quantum classifiers under finite-shot measurements, heterogeneous clients, multiple local updates, and partial participation. Finite-shot parameter-shift gradients are evaluated along recursively evolving proximal client trajectories, so their effect cannot be represented by simply adding an O(1/S) variance term to a standard proximal federated bound. We therefore analyze the trajectory-dependent discrepancy between the actual federated update and an ideal global-gradient step. At the circuit level, we establish unbiasedness of the parameter-shift estimator, coordinatewise variance O(1/S), and gradient mean-squared error O(d_q/S). At the optimization level, we establish first-order stationarity guarantees for smooth nonconvex objectives with time-varying learning rates and proximal coefficients, without a Polyak–Łojasiewicz condition. The analysis identifies two finite-shot effects: a direct stochastic-gradient residual and an indirect trajectory-mediated residual. It also shows that heterogeneity does not create an independent common-iterate O(ζ²) error; instead, it acts through subsequent client drift. For uniform sampling without replacement, we derive an additional correction proportional to (K−m)/(m(K−1)) and terminal drift energy, which vanishes under full participation. Experiments confirm near-inverse-shot estimator scaling and illustrate the resulting drift and stationarity behavior.",
+      links: [{ label: "DOI", href: "https://doi.org/10.5281/zenodo.24088971" }],
+    },
+    {
+      type: "preprint", badge: "Zenodo", venue: "Zenodo", year: 2026,
+      title: "From Robust Aggregation to Client Admission: Variational Quantum Trust Ranking under Partial Participation and Honest-Selection Bias",
+      authors: ["Duong The Do", "Duong Tung Nguyen"],
+      highlights: ["Byzantine mass 30% → 21.37%", "≈30% less full-update uplink", "Finite-shot top-s admission"],
+      abstract: "Byzantine-robust federated learning (FL) typically suppresses suspicious contributions only after clients transmit high-dimensional updates. We instead ask which clients should be admitted to full-update aggregation in the first place. We propose variational quantum trust-aware selection (VQTAS), a two-stage framework in which clients first expose compact behavioral descriptors, a shallow variational quantum circuit ranks their trust, and only high-trust participants transmit complete updates. We show that random-hyperplane sketches separate honest and sign-flipped updates under directional heterogeneity, while entanglement enables multivariate feature interactions absent from the corresponding product-state model and finite-shot measurement preserves top-s admission with margin-dependent shot complexity. Under partial participation, we derive an exact oracle floor on unavoidable Byzantine admission and bound the bias induced by nonuniform honest admission under non-IID data by ‖b_t^sel‖₂² ≤ ζ²χ²(q_t‖u). These results yield a nonconvex convergence guarantee separating honest-selection distortion, unavoidable Byzantine contamination, and excess ranking error. Under severe non-IID heterogeneity with 30% fixed sign-flip Byzantine clients, causal VQTAS reduces Byzantine aggregation mass from 30% to 21.37%, preserves an effective honest population of 30.92 out of 35 clients, and reduces projected full-update uplink by approximately 30%.",
+      links: [{ label: "DOI", href: "https://doi.org/10.5281/zenodo.24058093" }],
+    },
+    {
+      type: "preprint", badge: "Research Square", venue: "Research Square", year: 2026,
+      title: "NQ-SVM: Scalable Quantum Kernel Learning via Nyström-Based Support Vector Machines",
+      authors: ["Duong The Do", "Srikanth Thudumu", "Prem Prakash Jayaraman", "Duong Tung Nguyen"],
+      highlights: ["Kernel cost O(n²) → O(nm)", "Hybrid quantum–classical"],
+      abstract: "Support vector machines (SVMs) are widely used for classification, but become computationally expensive as datasets grow and data become high-dimensional or nonlinearly separable. Quantum support vector machines (QSVMs) enhance the traditional SVMs by replacing conventional feature mappings with quantum-implemented embeddings that project data into high-dimensional Hilbert spaces, potentially improving expressive power and efficiency. However, training QSVMs on current noisy intermediate-scale quantum (NISQ) devices remains challenging, as constructing the quantum kernel matrix requires repeated circuit executions and scales quadratically with dataset size. We propose NQ-SVM, a hybrid quantum-classical method that incorporates the Nyström approximation to enhance the scalability of QSVMs. By selecting a small set of landmark points, the Nyström method yields a low-rank kernel approximation, reducing complexity from O(n²) to O(nm), while preserving the quantum advantages in handling high-dimensional, non-linear data. Extensive simulations demonstrate that NQ-SVM achieves comparable classification accuracy to classical SVMs and full QSVMs, while substantially reducing training time and kernel evaluation costs. These results underscore the potential of NQ-SVM as a scalable and practical hybrid framework for near-term quantum machine learning (QML).",
+      links: [{ label: "DOI", href: "https://doi.org/10.21203/rs.3.rs-8962794/v1" }],
+    },
+    {
+      type: "journal", badge: "L-CSS", venue: "IEEE Control Systems Letters", year: 2026, detail: "vol. 10, pp. 2041–2046",
+      title: "Projected Variational Quantum Extragradient for Zero-Sum Games",
+      authors: ["Duong The Do", "Matthew Aldridge", "Duong Tung Nguyen"],
+      highlights: ["Variance O(1/S)", "Games up to 32 × 32", "Born-rule strategies"],
+      abstract: "We propose a projected variational quantum extragradient framework for computing approximate Nash equilibria in two-player zero-sum matrix games. Mixed strategies are parameterized as Born distributions of parameterized quantum circuits, transforming the classical bilinear saddle-point problem into a smooth but generally nonconvex-nonconcave problem in circuit-parameter space. To support arbitrary game sizes, we introduce a dominated embedding that maps (m, n) games to qubit-compatible power-of-two dimensions while preserving equilibrium structure. We develop a projected extragradient method using parameter-shift gradient estimators and establish variance bounds scaling as O(1/S) with the number of measurement shots S, together with convergence to approximate first-order stationarity under standard assumptions. Since stationarity does not necessarily imply equilibrium optimality, performance is evaluated using the game-space Nash gap. Numerical results show high-precision equilibrium computation on structured instances up to 32 × 32, while highlighting challenges in unstructured settings.",
+      links: [{ label: "DOI", href: "https://doi.org/10.1109/LCSYS.2026.3710797" }],
+    },
+    {
+      type: "preprint", badge: "arXiv", venue: "arXiv:2609.13216", year: 2026,
+      title: "QC-CCG: Quantum-Classical Algorithm for Two-Stage Adaptive Robust Optimization",
+      authors: ["Duong The Do", "Jiaming Cheng", "Duong Tung Nguyen"],
+      highlights: ["QUBO master problem", "Certified stopping criterion", "Generalizes classical C&CG"],
+      abstract: "Quantum optimization provides a promising approach for solving large-scale combinatorial problems through quadratic unconstrained binary optimization (QUBO) formulations. However, integrating QUBO-based solvers into structured optimization frameworks while preserving solution guarantees remains a fundamental challenge. This paper develops a hybrid quantum-classical column-and-constraint generation (QCCG) framework for solving two-stage adaptive robust optimization problems with binary first-stage decisions and linear recourse under polyhedral uncertainty. The proposed approach reformulates the restricted master problem as a QUBO and solves it approximately using a quantum optimizer, while retaining a classical adversarial subproblem to compute worst-case recourse and certify solution quality. We construct a constraint-preserving QUBO encoding for inequality-constrained master problems using slack variables and penalty terms, enabling general mixed-integer structures to be mapped to quantum-compatible representations. To address inexactness arising from discretization, penalty modeling, and quantum optimization, we introduce a bound-adjustment mechanism that yields valid lower and upper bounds and provides a certified stopping criterion. We show that the proposed framework generalizes classical column-and-constraint generation and retains its convergence properties when the master problem is solved exactly. Numerical experiments on two-stage robust location-transportation problems demonstrate that the proposed hybrid approach achieves solution quality comparable to classical methods while reducing the computational burden associated with solving mixed-integer master problems, highlighting the potential of hybrid quantum-classical optimization for scalable decision-making under uncertainty.",
+      links: [{ label: "arXiv", href: "https://arxiv.org/abs/2609.13216" }, { label: "PDF", href: "https://arxiv.org/pdf/2609.13216" }],
+    },
+    {
+      type: "conference", badge: "IC2E", venue: "14th IEEE International Conference on Cloud Engineering (IC2E)", year: 2026,
+      title: "Robust KV Cache Management for LLM Serving under Output Token Length Uncertainty",
+      authors: ["Jiaming Cheng", "Duong The Do", "Duong Tung Nguyen"],
+      highlights: ["Up to 56% lower cost", "Wasserstein DRO", "BurstGPT · Azure · ShareGPT traces"],
+      abstract: "KV cache memory is a primary bottleneck in modern LLM serving systems deployed on GPU clusters. A fundamental challenge is that the KV cache must be reserved upon request arrival, while the output token length remains unknown until generation completes. Under-reservation triggers preemption, forcing termination and recomputation of requests and incurring significant overhead, whereas over-reservation wastes memory and reduces throughput. This creates a central trade-off between memory efficiency and preemption risk. We present a robust KV cache management framework for LLM serving that jointly optimizes GPU parallelism configuration, KV cache reservation per request class, request routing across heterogeneous serving groups, and prefix caching for shared prompts. The framework incorporates latency SLO constraints and captures the interaction between memory allocation, throughput, and queueing delay. To address output token length uncertainty and workload distribution shift, we develop a Wasserstein distributionally robust optimization (DRO) formulation together with a scalable block coordinate descent algorithm for the resulting mixed-integer problem. Our analysis reveals a critical fractile structure that automatically adapts reservation quantiles to different preemption and memory cost regimes without manual tuning. Trace-driven evaluation on production LLM workloads, including BurstGPT, Azure, and ShareGPT traces, demonstrates up to 56% lower cost than fixed-quantile reservation baselines while maintaining competitive P99 latency, goodput, and SLO violation rates across diverse operating regimes.",
+      links: [{ label: "arXiv", href: "https://arxiv.org/abs/2607.16892" }],
+    },
+    {
+      type: "preprint", badge: "TechRxiv", venue: "TechRxiv", year: 2026,
+      title: "Quantum-Assisted Computation for Nash Equilibrium in Bimatrix Games",
+      authors: ["Duong The Do", "Duong Tung Nguyen"],
+      highlights: ["Quantum annealing", "QUBO reformulation", "Post-quantum refinement"],
+      abstract: "Nash equilibrium (NE) computation is a fundamental problem in game theory, with numerous applications in economics, control theory, computer science, and engineering. However, finding an NE remains computationally challenging, even in two-player normal-form games. In this work, we leverage quantum computing (QC) to develop an efficient quantum annealing-based algorithm for computing NEs in two-player non-cooperative games. Our approach exploits quantum parallelism to enhance computational efficiency. We first formulate the NE computation as a non-convex quadratic problem, which is then transformed into a quadratic unconstrained binary optimization (QUBO) problem through the use of penalization techniques. This reformulation is amenable to quantum annealing solvers. However, due to the probabilistic nature of quantum annealing, the solver typically returns a distribution of candidate solutions, which may not directly correspond to valid NEs. To address this, we propose a novel QA-assisted algorithm that incorporates a post-quantum processing step to refine, verify, and select approximate NEs from the sampled solutions. The effectiveness of the proposed algorithm is demonstrated through experimental validation, highlighting the potential of QC in solving complex equilibrium computation problems.",
+      links: [{ label: "DOI", href: "https://doi.org/10.36227/techrxiv.177220387.76420680/v1" }],
+    },
+    {
+      type: "preprint", badge: "TechRxiv", venue: "TechRxiv", year: 2026,
+      title: "Quantum-Assisted Benders' Decomposition for Optimal Service Placement in Edge Computing",
+      authors: ["Duong The Do", "Duong Tung Nguyen"],
+      highlights: ["Hybrid quantum–classical Benders", "MILP for edge computing"],
+      abstract: "Edge computing holds significant potential to revolutionize computation by providing rapid and widely accessible services to numerous devices at the network edge. For service providers, efficient service placement and workload allocation are critical to minimizing operational costs while ensuring high-quality user experiences. In this work, we formulate this problem as a mixed-integer linear program (MILP), which is computationally challenging due to its NP-hard nature. To address this, we propose an innovative hybrid quantum-classical algorithm that integrates recent advances in quantum computing with the Benders decomposition method. Specifically, the MILP is decomposed into a master problem, which, after a series of transformations, can be solved using a quantum annealer, and a linear programming subproblem handled by a classical solver. These two problems are iteratively updated and solved, with information exchanged between the quantum and classical solvers, until convergence is achieved. Numerical experiments validate the effectiveness and computational advantages of the proposed method, demonstrating its practical applicability to real-world edge computing scenarios.",
+      links: [{ label: "DOI", href: "https://doi.org/10.36227/techrxiv.177223105.53160734/v1" }],
+    },
+    {
+      type: "conference", badge: "Cloud Summit", venue: "2023 IEEE Cloud Summit", year: 2023, detail: "pp. 52–57",
+      title: "Quantum-based Distributed Algorithms for Edge Node Placement and Workload Allocation",
+      authors: ["Duong The Do", "Ni Trieu", "Duong Tung Nguyen"],
+      highlights: ["QUBO + LP decomposition", "Edge server placement"],
+      abstract: "Edge computing is a promising technology that offers a superior user experience and enables various innovative Internet of Things applications. In this paper, we present a mixed-integer linear programming (MILP) model for optimal edge server placement and workload allocation, which is known to be NP-hard. To this end, we explore the possibility of addressing this computationally challenging problem using quantum computing. However, existing quantum solvers are limited to solving unconstrained binary programming problems. To overcome this obstacle, we propose a hybrid quantum-classical solution that decomposes the original problem into a quadratic unconstrained binary optimization (QUBO) problem and a linear program (LP) subproblem. The QUBO problem can be solved by a quantum solver, while the LP subproblem can be solved using traditional LP solvers. Our numerical experiments demonstrate the practicality of leveraging quantum supremacy to solve complex optimization problems in edge computing.",
+      links: [{ label: "DOI", href: "https://doi.org/10.1109/cloudsummit57601.2023.00015" }],
+    },
+    {
+      type: "journal", badge: "IEEE Access", venue: "IEEE Access", year: 2020, detail: "vol. 8",
+      title: "Road Environment Recognition for Automotive FMCW Radar Systems Through Convolutional Neural Network",
+      authors: ["Heonkyo Sim", "The-Duong Do", "Seongwook Lee", "Yong-Hwa Kim", "Seong-Cheol Kim"],
+      highlights: ["77 GHz FMCW radar", "100% recognition on real roads"],
+      abstract: "In this study, we propose a method to recognize road environments with automotive frequency-modulated continuous wave (FMCW) radar systems. For automotive radar systems on the road, diverse road environments are observed. Each road environment generates unnecessary echoes known as clutter, and the magnitude distribution of received radar signal varies depending on road structures. Therefore, it is necessary to classify the road environment and adopt a target detection algorithm suitable for each road environment characteristic. To recognize the road environment in advance, it is necessary to identify the section where the road environment changes. In this paper, we define a changed road area as a transition region, and we classify the road environment and transition regions to improve the road environment recognition performance. Road environments are recognized by applying convolutional neural networks to the frequency-domain received signals of 77 GHz FMCW automotive radar systems. Experimental results in real-road environments demonstrate that the proposed method achieves 100% recognition performance, which is better if compared with that of the conventional methods.",
+      links: [{ label: "DOI", href: "https://doi.org/10.1109/ACCESS.2020.3013263" }],
+    },
+    {
+      type: "journal", badge: "IEEE Access", venue: "IEEE Access", year: 2020, detail: "vol. 8",
+      title: "Convolutional-Neural-Network-Based Partial Discharge Diagnosis for Power Transformer Using UHF Sensor",
+      authors: ["The-Duong Do", "Vo-Nguyen Tuyet-Doan", "Yong-Sung Cho", "Jong-Ho Sun", "Yong-Hwa Kim"],
+      highlights: ["6 discharge-defect classes", "Beats SVM / FNN baselines by 8.8–18.8%"],
+      abstract: "Given the enormous capital value of power transformers and their integral role in the electricity network, increasing attention has been given to diagnostic and monitoring tools as a safety precaution measure to evaluate the internal condition of transformers. This study overcomes the fault diagnosis problem of power transformers using an ultra high frequency drain valve sensor. A convolutional neural network (CNN) is proposed to classify six types of discharge defects in power transformers. The proposed model utilizes the phase–amplitude response from a phase-resolved partial discharge (PRPD) signal to reduce the input size. The performance of the proposed method is verified through PRPD experiments using artificial cells. The experimental results indicate that the classification performance of the proposed method is significantly better than those of conventional algorithms, such as linear and nonlinear support vector machines and feedforward neural networks, at 18.78%, 10.95%, and 8.76%, respectively. In addition, a comparison with the different representations of the data leads to the observation that the proposed CNN using a PA response provides a higher accuracy than that using sequence data at 1.46%.",
+      links: [{ label: "DOI", href: "https://doi.org/10.1109/ACCESS.2020.3038386" }],
+    },
+    {
+      type: "journal", badge: "IEEE Access", venue: "IEEE Access", year: 2020, detail: "vol. 8",
+      title: "Anomaly Detection for Partial Discharge in Gas-Insulated Switchgears Using Autoencoder",
+      authors: ["Ngoc-Diem Tran Thi", "The-Duong Do", "Jae-Ryong Jung", "Hyangeun Jo", "Yong-Hwa Kim"],
+      highlights: ["86.75% detection", "+40.5% vs one-class SVM"],
+      abstract: "In this article, we propose a new anomaly detection method to detect the partial discharge in a gas-insulated switchgear. An autoencoder was used for anomaly detection and was modeled on the one-class classification problem. Based on the one-class classification scenario, in which the training data exploited the noise data only, the proposed autoencoder learned the low-dimensional latent information from the high-dimensional space of the input signal. Then, the reconstruction error was used as a fault indicator, and the threshold was determined using the partial discharge data. The performance of the proposed AE was verified by on-site noise and PRPD experiments, using an online UHF PD monitoring system in the real-world environment. The results showed that the proposed autoencoder not only achieved 86.75% detection performance for the on-site noise and partial discharge data in gas-insulated switchgears but also allowed better detection performance than the one-class support vector machine learning procedure by 40.5%.",
+      links: [{ label: "DOI", href: "https://doi.org/10.1109/ACCESS.2020.3017226" }],
+    },
+    {
+      type: "journal", badge: "Sensors", venue: "Sensors", year: 2020, detail: "vol. 20",
+      title: "One-Shot Learning for Partial Discharge Diagnosis Using Ultra-High-Frequency Sensor in Gas-Insulated Switchgear",
+      authors: ["Vo-Nguyen Tuyet-Doan", "The-Duong Do", "Ngoc-Diem Tran-Thi", "Young-Woo Youn", "Yong-Hwa Kim"],
+      highlights: ["Siamese network", "Small PRPD dataset"],
+      abstract: "In recent years, deep learning has been successfully used in order to classify partial discharges (PDs) for assessing the condition of insulation systems in different electrical equipment. However, fault diagnosis using deep learning is still challenging, as it requires a large amount of training data, which is difficult and expensive to obtain in the real world. This paper proposes a novel one-shot learning method for fault diagnosis using a small dataset of phase-resolved PDs (PRPDs) in a gas-insulated switchgear (GIS). The proposed method is based on a Siamese network framework, which employs a distance metric function for predicting sample pairs from the same PRPD class or different PRPD classes. Experimental results over the small PRPD dataset that was obtained from an ultra-high-frequency sensor in the GIS show that the proposed method achieves outstanding performance for PRPD fault diagnosis as compared with the previous methods.",
+      links: [{ label: "DOI", href: "https://doi.org/10.3390/s20195562" }],
+    },
+  ],
+
+  talks: [
+    { year: 2026, venue: "LIONS, ASU", title: "DRQKL: Distributionally Robust Quantum Kernel Learning via Low-Rank Nyström Approximation" },
+    { year: 2026, venue: "QC4MC, ASU", title: "Quantum Machine Learning for Predicting Complex Rheological Behavior in DSCG Soft Materials" },
+    { year: 2023, venue: "INFORMS", title: "Hybrid Classical–Quantum Benders Decomposition for Optimal Edge Network Design" },
+    { year: 2022, venue: "INFORMS", title: "Leveraging Quantum Computing for Optimal Multi-Service Provisioning in Edge Computing" },
+  ],
+
+  honors: [
+    { year: 2023, text: "QWorld QIntern Best Presentation, Second Team" },
+    { year: 2023, text: "Womanium Global Quantum Scholarship" },
+    { year: 2023, text: "NSF Student Travel Grant" },
+    { year: 2022, text: "ASU Outstanding Research Award" },
+    { year: 2022, text: "Session Chair, INFORMS Annual Meeting" },
+    { year: 2021, text: "Myongji University Research Honor Award" },
+    { year: 2019, text: "BK21++ Scholarship" },
+  ],
+
+  reviewing: {
+    journals: ["IEEE TMC", "IEEE IoT-J", "IEEE L-CSS", "IEEE Access", "Energy Conv. & Econ."],
+    conferences: ["AAMAS '27", "INFOCOM '26", "GLOBECOM '26", "SECON '24 '26", "ISGT NA '23", "CSCML '22", "ISGT '22", "SEC '21", "ICCE '20"],
+  },
+};
